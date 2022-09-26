@@ -1,13 +1,13 @@
-import 'package:festivalapp/home_page/home_page.dart';
-import 'package:festivalapp/home_page/user_detail.dart';
+import 'dart:convert';
 
-import 'package:festivalapp/home_page/share_page.dart';
+import 'package:festivalapp/user_detail/home_page/festival_controller.dart';
+import 'package:festivalapp/user_detail/home_page/home_page.dart';
+import 'package:festivalapp/user_detail/home_page/share_page.dart';
+import 'package:festivalapp/user_detail/user_detail.dart';
+import 'package:festivalapp/utils/shardprafrance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
-import '../theam/app_string.dart';
-import '../utils/size_utils.dart';
-import '../widget/custom_text.dart';
+import 'package:get/get.dart';
 
 class CardsPage extends StatefulWidget {
   CardsPage({Key? key}) : super(key: key);
@@ -15,6 +15,8 @@ class CardsPage extends StatefulWidget {
   @override
   State<CardsPage> createState() => _CardsPageState();
 }
+
+final FestivalController festivalController = Get.find();
 
 class _CardsPageState extends State<CardsPage> {
   List page = [
@@ -29,6 +31,8 @@ class _CardsPageState extends State<CardsPage> {
     setState(
       () {
         count = index;
+
+        print("count---$count");
       },
     );
   }

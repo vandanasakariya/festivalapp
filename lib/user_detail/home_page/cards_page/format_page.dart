@@ -1,13 +1,18 @@
 import 'package:festivalapp/theam/app_img.dart';
+import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_background.dart';
 import 'package:festivalapp/utils/navigation-utils/routes.dart';
 import 'package:festivalapp/widget/custom_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../theam/app_string.dart';
-import '../utils/navigation-utils/navigation.dart';
-import '../utils/size_utils.dart';
+import '../../../theam/app_string.dart';
+import '../../../utils/navigation-utils/navigation.dart';
+import '../../../utils/size_utils.dart';
+import '../../user_detail.dart';
+import '../home_page.dart';
+import '../share_page.dart';
+import 'format_pages.dart';
 
 class FormatPage extends StatefulWidget {
   FormatPage({Key? key}) : super(key: key);
@@ -17,13 +22,51 @@ class FormatPage extends StatefulWidget {
 }
 
 class _FormatPageState extends State<FormatPage> {
+  List page = [
+    FormatePages(),
+    SharePage(),
+    UserDetail(),
+  ];
+
+  int count = 0;
+
   int i = 0;
+  void _onItemTapped(int index) {
+    setState(
+      () {
+        count = index;
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
+        body: page.elementAt(count),
+        bottomNavigationBar: BottomNavigationBar(
+          unselectedItemColor: Colors.black,
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.share),
+              label: "Share",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.person,
+              ),
+              label: "Profile",
+            ),
+          ],
+          currentIndex: count,
+          selectedItemColor: Colors.deepOrange,
+          onTap: _onItemTapped,
+        ),
+        /* Padding(
           padding: EdgeInsets.symmetric(
               vertical: SizeUtils.verticalBlockSize * 3,
               horizontal: SizeUtils.horizontalBlockSize * 5),
@@ -44,7 +87,7 @@ class _FormatPageState extends State<FormatPage> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
                       child: Image.asset(
-                        "${i == 1 ? AppImage.festivalLogo : i == 2 ? AppImage.rK : i == 3 ? AppImage.festivalLogo : i == 4 ? AppImage.rK : SizedBox()}",
+                        "${i == 1 ? AppImage.festivalLogo : i == 2 ? AppImage.rK : i == 3 ? AppImage.md : i == 4 ? AppImage.rK : AppImage.noimagefound}",
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -87,7 +130,7 @@ class _FormatPageState extends State<FormatPage> {
                   },
                   name: AppImage.festivalLogo,
                   name1: AppImage.rK,
-                  name2: AppImage.festivalLogo,
+                  name2: AppImage.md,
                   name3: AppImage.rK,
                 ),
                 _commonRow(
@@ -113,6 +156,22 @@ class _FormatPageState extends State<FormatPage> {
                   child: InkWell(
                     onTap: () {
                       Navigation.pushNamed(Routes.colorFullBackground);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ColorFullBackground(
+                            festivalImage: AssetImage(i == 1
+                                ? AppImage.festivalLogo
+                                : i == 2
+                                    ? AppImage.rK
+                                    : i == 3
+                                        ? AppImage.md
+                                        : i == 4
+                                            ? AppImage.rK
+                                            : AppImage.noimagefound),
+                          ),
+                        ),
+                      );
                     },
                     child: CircleAvatar(
                       radius: 29,
@@ -135,12 +194,12 @@ class _FormatPageState extends State<FormatPage> {
               ],
             ),
           ),
-        ),
+        ),*/
       ),
     );
   }
 
-  _commonRow({
+  /* _commonRow({
     String name = "",
     String name1 = "",
     String name2 = "",
@@ -207,5 +266,5 @@ class _FormatPageState extends State<FormatPage> {
         ],
       ),
     );
-  }
+  }*/
 }

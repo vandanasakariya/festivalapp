@@ -1,10 +1,15 @@
-import 'package:festivalapp/home_page/cards-page.dart';
-import 'package:festivalapp/home_page/colorfull_background.dart';
-import 'package:festivalapp/home_page/format_page.dart';
-import 'package:festivalapp/home_page/user_detail.dart';
 import 'package:festivalapp/splash_screen.dart';
+import 'package:festivalapp/theam/app_img.dart';
+import 'package:festivalapp/user_detail/home_page/cards_page/cards-page.dart';
+import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_background.dart';
+
+import 'package:festivalapp/user_detail/home_page/cards_page/format_page.dart';
+import 'package:festivalapp/user_detail/user_detail.dart';
+import 'package:flutter/cupertino.dart';
 
 import 'package:get/get.dart';
+
+import '../../user_detail/home_page/cards_page/download_img/download_img.dart';
 
 mixin Routes {
   static const defaultTransition = Transition.rightToLeft;
@@ -13,6 +18,7 @@ mixin Routes {
   static const cardsPage = "/CardsPage";
   static const formatPage = "/formatPage";
   static const colorFullBackground = "/colorFullBackground";
+  static const downloadImage = "/downloadImage";
 
   static List<GetPage<dynamic>> pages = [
     GetPage<dynamic>(
@@ -37,7 +43,13 @@ mixin Routes {
     ),
     GetPage<dynamic>(
       name: colorFullBackground,
-      page: () => ColorFullBackground(),
+      page: () =>
+          ColorFullBackground(festivalImage: AssetImage(AppImage.festivalLogo)),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: downloadImage,
+      page: () => DownloadImage(),
       transition: defaultTransition,
     ),
   ];
