@@ -194,7 +194,7 @@ class _FormatePagesState extends State<FormatePages> {
                 child: InkWell(
                   onTap: () {
                     // Navigation.pushNamed(Routes.colorFullBackground);
-                    // BannerAds();
+                    BannerAds();
                     //adController.createInterstitialAd();
                     festivalController.imageChange.value == ""
                         ? SizedBox()

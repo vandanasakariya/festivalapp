@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                                         SizeUtils.horizontalBlockSize * 2),
                                 child: GestureDetector(
                                   onTap: () {
-                                    //BannerAds();
+                                    BannerAds();
                                     if (festivalController.festivalModal.value
                                             .festival![index] ==
                                         "diwali") {
