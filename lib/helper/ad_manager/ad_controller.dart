@@ -33,7 +33,7 @@ class AdController extends GetxController {
     try {
       InterstitialAd.load(
         // adUnitId: inter.value.toString(),
-        adUnitId: "ca-app-pub-3940256099942544/1033173712",
+        adUnitId: "ca-app-pub-3481984670024764/3420908366",
         request: AdRequest(),
         adLoadCallback:
             InterstitialAdLoadCallback(onAdLoaded: (InterstitialAd ad) {

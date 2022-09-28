@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:typed_data';
 
+import 'package:festivalapp/helper/ad_manager/banner_ad.dart';
 import 'package:festivalapp/theam/app_img.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -976,6 +977,9 @@ class _ColorFullBackgroundState extends State<ColorFullBackground> {
               ),
             ),
           ),
+        ),
+        bottomNavigationBar: Container(
+          child: BannerAds(),
         ),
       ),
     );

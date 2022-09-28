@@ -1,4 +1,5 @@
 import 'package:festivalapp/helper/ad_manager/ad_controller.dart';
+import 'package:festivalapp/helper/ad_manager/banner_ad.dart';
 import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_background.dart';
 
 import 'package:flutter/material.dart';
@@ -193,16 +194,19 @@ class _FormatePagesState extends State<FormatePages> {
                 child: InkWell(
                   onTap: () {
                     // Navigation.pushNamed(Routes.colorFullBackground);
-                    adController.createInterstitialAd();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ColorFullBackground(
-                          festivalImage: NetworkImage(
-                              festivalController.imageChange.value),
-                        ),
-                      ),
-                    );
+                    // BannerAds();
+                    //adController.createInterstitialAd();
+                    festivalController.imageChange.value == ""
+                        ? SizedBox()
+                        : Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ColorFullBackground(
+                                festivalImage: NetworkImage(
+                                    festivalController.imageChange.value),
+                              ),
+                            ),
+                          );
                   },
                   child: CircleAvatar(
                     radius: 29,
@@ -224,6 +228,9 @@ class _FormatePagesState extends State<FormatePages> {
               ),
             ],
           ),
+        ),
+        bottomNavigationBar: Container(
+          child: BannerAds(),
         ),
       ),
     );
@@ -300,4 +307,5 @@ class _FormatePagesState extends State<FormatePages> {
     );
   }
 */
+
 }

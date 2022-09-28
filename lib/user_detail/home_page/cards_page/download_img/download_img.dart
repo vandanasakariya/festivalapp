@@ -14,6 +14,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:screenshot/screenshot.dart';
 import 'package:share_plus/share_plus.dart';
+import '../../../../helper/ad_manager/ad_controller.dart';
 import '../../../../utils/size_utils.dart';
 import '../../festival_controller.dart';
 
@@ -25,6 +26,7 @@ class DownloadImage extends StatefulWidget {
 }
 
 class _DownloadImageState extends State<DownloadImage> {
+  final AdController adController = Get.find();
   final FestivalController festivalController = Get.find()..imageShow();
   ScreenshotController screenshotController = ScreenshotController();
   bool isChange = false;
@@ -104,6 +106,7 @@ class _DownloadImageState extends State<DownloadImage> {
                     horizontal: SizeUtils.horizontalBlockSize * 1),
                 child: InkWell(
                   onTap: () async {
+                    adController.createInterstitialAd();
                     final tt = DateTime.now();
                     /*String d = tt.day.toString();
                     String m = tt.month.toString();

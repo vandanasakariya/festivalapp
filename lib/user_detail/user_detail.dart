@@ -186,7 +186,7 @@ class _UserDetailState extends State<UserDetail> {
                     ),
                     InkWell(
                       onTap: () async {
-                        adController.createRewardedAd();
+                        // adController.createRewardedAd();
 
                         festivalController.userLogin.value = true;
                         try {
