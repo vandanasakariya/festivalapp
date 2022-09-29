@@ -950,6 +950,7 @@ class _ColorFullBackgroundState extends State<ColorFullBackground> {
                         horizontal: SizeUtils.horizontalBlockSize * 1),
                     child: InkWell(
                       onTap: () async {
+                        BannerAds();
                         final capturedImage =
                             await screenshotController.capture();
                         Navigation.pushNamed(Routes.downloadImage,

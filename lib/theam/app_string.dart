@@ -34,5 +34,6 @@ class AppString {
   static const bottomRight = "Bottom Right";
   static const imgDwlSuccess = "Image Download Successfully";
   static const ok = "OK";
-  //static const share = "Share";
+  static const plzSelectImg =
+      "Please select Image"; //static const share = "Share";
 }

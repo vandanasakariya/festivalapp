@@ -1,6 +1,7 @@
 import 'package:festivalapp/helper/ad_manager/ad_controller.dart';
 import 'package:festivalapp/helper/ad_manager/banner_ad.dart';
 import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_background.dart';
+import 'package:festivalapp/utils/navigation-utils/navigation.dart';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -72,121 +73,116 @@ class _FormatePagesState extends State<FormatePages> {
                 color: Colors.black,
                 thickness: 2,
               ),
-              Obx(
-                () => festivalController.loding.value == true
-                    ? const Center(
-                        child: CircularProgressIndicator(),
-                      )
-                    : apiCheck["checkApi"] == 1
-                        ? Expanded(
-                            child: GridView.builder(
-                              itemCount: festivalController
-                                  .diwaliModal.value.diwali?.length,
-                              gridDelegate:
-                                  const SliverGridDelegateWithFixedCrossAxisCount(
-                                      crossAxisCount: 4,
-                                      crossAxisSpacing: 12,
-                                      mainAxisSpacing: 10,
-                                      childAspectRatio: 100 / 150),
-                              itemBuilder: (BuildContext ctx, index) {
-                                return InkWell(
-                                  onTap: () {
-                                    festivalController.imageChange.value =
-                                        festivalController.diwaliModal.value
-                                                .diwali?[index] ??
-                                            "";
-                                  },
-                                  child: Image.network(
-                                      "${festivalController.diwaliModal.value.diwali?[index]}"),
-                                );
-                              },
-                            ),
-                          )
-                        : apiCheck["checkApi"] == 2
-                            ? Expanded(
-                                child: GridView.builder(
-                                  itemCount: festivalController
-                                      .uttrayanModal.value.uttrayan?.length,
-                                  gridDelegate:
-                                      const SliverGridDelegateWithFixedCrossAxisCount(
-                                          crossAxisCount: 4,
-                                          crossAxisSpacing: 12,
-                                          mainAxisSpacing: 10,
-                                          childAspectRatio: 100 / 150),
-                                  itemBuilder: (BuildContext ctx, index) {
-                                    return InkWell(
-                                      onTap: () {
-                                        festivalController.imageChange.value =
-                                            festivalController.uttrayanModal
-                                                    .value.uttrayan?[index] ??
-                                                "";
-                                      },
-                                      child: Image.network(
-                                          "${festivalController.uttrayanModal.value.uttrayan?[index]}"),
-                                    );
-                                  },
-                                ),
-                              )
-                            : apiCheck["checkApi"] == 3
-                                ? Expanded(
-                                    child: GridView.builder(
-                                      itemCount: festivalController
-                                          .holiModal.value.holi?.length,
-                                      gridDelegate:
-                                          const SliverGridDelegateWithFixedCrossAxisCount(
-                                              crossAxisCount: 4,
-                                              crossAxisSpacing: 12,
-                                              mainAxisSpacing: 10,
-                                              childAspectRatio: 100 / 150),
-                                      itemBuilder: (BuildContext ctx, index) {
-                                        return InkWell(
-                                          onTap: () {
-                                            festivalController.imageChange
-                                                .value = festivalController
-                                                    .holiModal
-                                                    .value
-                                                    .holi?[index] ??
-                                                "";
-                                          },
-                                          child: Image.network(
-                                              "${festivalController.holiModal.value.holi?[index]}"),
-                                        );
-                                      },
-                                    ),
-                                  )
-                                : apiCheck["checkApi"] == 4
-                                    ? Expanded(
-                                        child: GridView.builder(
-                                          itemCount: festivalController
-                                              .janmashtamiModal
-                                              .value
-                                              .janmashtami
-                                              ?.length,
-                                          gridDelegate:
-                                              const SliverGridDelegateWithFixedCrossAxisCount(
-                                                  crossAxisCount: 4,
-                                                  crossAxisSpacing: 12,
-                                                  mainAxisSpacing: 10,
-                                                  childAspectRatio: 100 / 150),
-                                          itemBuilder:
-                                              (BuildContext ctx, index) {
-                                            return InkWell(
-                                              onTap: () {
-                                                festivalController.imageChange
-                                                    .value = festivalController
-                                                        .janmashtamiModal
-                                                        .value
-                                                        .janmashtami?[index] ??
-                                                    "";
-                                              },
-                                              child: Image.network(
-                                                  "${festivalController.janmashtamiModal.value.janmashtami?[index]}"),
-                                            );
-                                          },
-                                        ),
-                                      )
-                                    : SizedBox(),
-              ),
+              Obx(() => festivalController.loding.value == true
+                  ? const Center(
+                      child: CircularProgressIndicator(),
+                    )
+                  : apiCheck["checkApi"] == 1
+                      ? Expanded(
+                          child: GridView.builder(
+                            itemCount: festivalController
+                                .diwaliModal.value.diwali?.length,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 4,
+                                    crossAxisSpacing: 12,
+                                    mainAxisSpacing: 10,
+                                    childAspectRatio: 100 / 150),
+                            itemBuilder: (BuildContext ctx, index) {
+                              return InkWell(
+                                onTap: () {
+                                  festivalController.imageChange.value =
+                                      festivalController.diwaliModal.value
+                                              .diwali?[index] ??
+                                          "";
+                                },
+                                child: Image.network(
+                                    "${festivalController.diwaliModal.value.diwali?[index]}"),
+                              );
+                            },
+                          ),
+                        )
+                      : apiCheck["checkApi"] == 2
+                          ? Expanded(
+                              child: GridView.builder(
+                                itemCount: festivalController
+                                    .uttrayanModal.value.uttrayan?.length,
+                                gridDelegate:
+                                    const SliverGridDelegateWithFixedCrossAxisCount(
+                                        crossAxisCount: 4,
+                                        crossAxisSpacing: 12,
+                                        mainAxisSpacing: 10,
+                                        childAspectRatio: 100 / 150),
+                                itemBuilder: (BuildContext ctx, index) {
+                                  return InkWell(
+                                    onTap: () {
+                                      festivalController.imageChange.value =
+                                          festivalController.uttrayanModal.value
+                                                  .uttrayan?[index] ??
+                                              "";
+                                    },
+                                    child: Image.network(
+                                        "${festivalController.uttrayanModal.value.uttrayan?[index]}"),
+                                  );
+                                },
+                              ),
+                            )
+                          : apiCheck["checkApi"] == 3
+                              ? Expanded(
+                                  child: GridView.builder(
+                                    itemCount: festivalController
+                                        .holiModal.value.holi?.length,
+                                    gridDelegate:
+                                        const SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 4,
+                                            crossAxisSpacing: 12,
+                                            mainAxisSpacing: 10,
+                                            childAspectRatio: 100 / 150),
+                                    itemBuilder: (BuildContext ctx, index) {
+                                      return InkWell(
+                                        onTap: () {
+                                          festivalController.imageChange.value =
+                                              festivalController.holiModal.value
+                                                      .holi?[index] ??
+                                                  "";
+                                        },
+                                        child: Image.network(
+                                            "${festivalController.holiModal.value.holi?[index]}"),
+                                      );
+                                    },
+                                  ),
+                                )
+                              : apiCheck["checkApi"] == 4
+                                  ? Expanded(
+                                      child: GridView.builder(
+                                        itemCount: festivalController
+                                            .janmashtamiModal
+                                            .value
+                                            .janmashtami
+                                            ?.length,
+                                        gridDelegate:
+                                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                                crossAxisCount: 4,
+                                                crossAxisSpacing: 12,
+                                                mainAxisSpacing: 10,
+                                                childAspectRatio: 100 / 150),
+                                        itemBuilder: (BuildContext ctx, index) {
+                                          return InkWell(
+                                            onTap: () {
+                                              festivalController.imageChange
+                                                  .value = festivalController
+                                                      .janmashtamiModal
+                                                      .value
+                                                      .janmashtami?[index] ??
+                                                  "";
+                                            },
+                                            child: Image.network(
+                                                "${festivalController.janmashtamiModal.value.janmashtami?[index]}"),
+                                          );
+                                        },
+                                      ),
+                                    )
+                                  : SizedBox()),
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: SizeUtils.verticalBlockSize * 1,
@@ -197,7 +193,27 @@ class _FormatePagesState extends State<FormatePages> {
                     BannerAds();
                     //adController.createInterstitialAd();
                     festivalController.imageChange.value == ""
-                        ? SizedBox()
+                        ? showDialog(
+                            context: context,
+                            builder: (context) {
+                              return Container(
+                                child: AlertDialog(
+                                  actions: [
+                                    TextButton(
+                                      onPressed: () {
+                                        Navigation.pop();
+                                      },
+                                      child: AppText(text: AppString.ok),
+                                    ),
+                                  ],
+                                  title: AppText(
+                                    text: AppString.plzSelectImg,
+                                    fontSize: SizeUtils.fSize_13(),
+                                  ),
+                                ),
+                              );
+                            },
+                          )
                         : Navigator.push(
                             context,
                             MaterialPageRoute(

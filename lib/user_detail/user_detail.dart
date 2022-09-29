@@ -93,7 +93,7 @@ class _UserDetailState extends State<UserDetail> {
                                   : Image.file(
                                       File(festivalController
                                           .seletedImagePath.value),
-                                      fit: BoxFit.cover,
+                                      fit: BoxFit.fill,
                                     ),
                               decoration: BoxDecoration(
                                 border: Border.all(
@@ -186,8 +186,7 @@ class _UserDetailState extends State<UserDetail> {
                     ),
                     InkWell(
                       onTap: () async {
-                        // adController.createRewardedAd();
-
+                        BannerAds();
                         festivalController.userLogin.value = true;
                         try {
                           AppPreference.setString("companyname",
