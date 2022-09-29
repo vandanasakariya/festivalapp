@@ -167,7 +167,7 @@ class _DownloadImageState extends State<DownloadImage> {
                 text: AppString.download,
                 fontSize: SizeUtils.fSize_19(),
               ),
-              GestureDetector(
+              /* GestureDetector(
                 onTap: () async {
                   // if (File(image).exists()) {}
                   print("----00000----$image-");
@@ -203,12 +203,12 @@ class _DownloadImageState extends State<DownloadImage> {
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    /*vertical: SizeUtils.verticalBlockSize * 1*/),
+                    */ /*vertical: SizeUtils.verticalBlockSize * 1*/ /*),
                 child: AppText(
                   text: AppString.share,
                   fontSize: SizeUtils.fSize_19(),
                 ),
-              ),
+              ),*/
             ],
           ),
         ),
@@ -216,7 +216,7 @@ class _DownloadImageState extends State<DownloadImage> {
     );
   }
 
-  Future<void> shareMethod() async {
+  /*Future<void> shareMethod() async {
     try {
       // RenderRepaintBoundary boundary =
       // previewContainer.currentContext.findRenderObject();
@@ -241,5 +241,5 @@ class _DownloadImageState extends State<DownloadImage> {
     } on PlatformException catch (e) {
       print("Exception while taking screenshot:" + e.toString());
     }
-  }
+  }*/
 }

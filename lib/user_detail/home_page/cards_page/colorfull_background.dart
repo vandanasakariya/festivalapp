@@ -1012,10 +1012,7 @@ _commonRow({
                 height: SizeUtils.verticalBlockSize * 8,
                 width: SizeUtils.horizontalBlockSize * 17,
                 // color: Colors.grey.shade400,
-                child: Image.memory(
-                  bytes1!,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.asset(AppImage.topLeft),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -1034,10 +1031,7 @@ _commonRow({
                 height: SizeUtils.verticalBlockSize * 8,
                 width: SizeUtils.horizontalBlockSize * 17,
                 //color: Colors.grey.shade400,
-                child: Image.memory(
-                  bytes2!,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.asset(AppImage.bottomLeft),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -1056,10 +1050,7 @@ _commonRow({
                 height: SizeUtils.verticalBlockSize * 8,
                 width: SizeUtils.horizontalBlockSize * 17,
                 // color: Colors.grey.shade400,
-                child: Image.memory(
-                  bytes3!,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.asset(AppImage.topright),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
@@ -1078,10 +1069,7 @@ _commonRow({
                 height: SizeUtils.verticalBlockSize * 8,
                 width: SizeUtils.horizontalBlockSize * 17,
                 //color: Colors.grey.shade400,
-                child: Image.memory(
-                  bytes4!,
-                  fit: BoxFit.fill,
-                ),
+                child: Image.asset(AppImage.bottomRight),
               ),
               Padding(
                 padding: EdgeInsets.symmetric(
