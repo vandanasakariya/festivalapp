@@ -1,9 +1,13 @@
 class AppString {
   static const baseUrl = "https://myfestivalcard.glitch.me/api/festival/";
-  static const diwali = "diwali";
-  static const uttrayan = "uttrayan";
-  static const holi = "holi";
-  static const mahashivratri = "mahashivratri";
+
+  static const dhanTeras = "Dhan_Teras";
+
+  static const diwali = "Diwali";
+  static const happyNewYear = "Happy_New_Year";
+  static const uttrayan = "Uttrayan";
+  static const holi = "Holi";
+  static const mahashivratri = "Mahashivratri";
   static const by = "By";
   static const byClickOnTech = "Click on Tech";
   static const pleaseFillSomeDetail = "Please fill some detail to";

@@ -68,18 +68,18 @@ class HomePage extends StatelessWidget {
                                     BannerAds();
                                     if (festivalController.festivalModal.value
                                             .festival![index] ==
-                                        "diwali") {
-                                      festivalController.getDiwaliMeth();
+                                        "Dhan_Teras") {
+                                      festivalController.getDhanTeras();
                                       festivalController.isCheckApi.value = 1;
                                     } else if (festivalController.festivalModal
                                             .value.festival![index] ==
-                                        "uttrayan") {
-                                      festivalController.getUttrayanMeth();
+                                        "Diwali") {
+                                      festivalController.getDiwaliMeth();
                                       festivalController.isCheckApi.value = 2;
                                     } else if (festivalController.festivalModal
                                             .value.festival![index] ==
-                                        "holi") {
-                                      festivalController.getHoliMeth();
+                                        "happy_New_Year") {
+                                      festivalController.getHappyNewYearMeth();
                                       festivalController.isCheckApi.value = 3;
                                     } else if (festivalController.festivalModal
                                             .value.festival![index] ==

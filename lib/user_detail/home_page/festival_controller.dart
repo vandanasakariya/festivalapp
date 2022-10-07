@@ -5,7 +5,9 @@ import 'dart:io' as Io;
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
+import '../../api/dhanateras_modal.dart';
 import '../../api/diwali_modal.dart';
+import '../../api/happynewyear_modal.dart';
 import '../../api/holi_modal.dart';
 import '../../api/janmastami_modal.dart';
 import '../../api/modal.dart';
@@ -61,6 +63,17 @@ class FestivalController extends GetxController {
     loding.value = false;
   }
 
+  Rx<DhanTerasModal> dhanteras = DhanTerasModal().obs;
+  Future<void> getDhanTeras() async {
+    loding.value = true;
+    final result = await FestivalService.dhanTeras();
+    if (result != null) {
+      dhanteras.value = result;
+      print("dhanteras---${dhanteras.value.dhanTeras}");
+    }
+    loding.value = false;
+  }
+
   Rx<DiwaliModal> diwaliModal = DiwaliModal().obs;
   Future<void> getDiwaliMeth() async {
     loding.value = true;
@@ -68,6 +81,17 @@ class FestivalController extends GetxController {
     if (result != null) {
       diwaliModal.value = result;
       print("uttrayan---${diwaliModal.value.diwali}");
+    }
+    loding.value = false;
+  }
+
+  Rx<HappyNewYearModal> happyNewYear = HappyNewYearModal().obs;
+  Future<void> getHappyNewYearMeth() async {
+    loding.value = true;
+    final result = await FestivalService.getHappyNewYer();
+    if (result != null) {
+      happyNewYear.value = result;
+      print("happyNewYear---${happyNewYear.value.happyNewYear}");
     }
     loding.value = false;
   }

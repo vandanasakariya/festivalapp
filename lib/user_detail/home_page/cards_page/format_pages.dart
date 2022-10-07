@@ -81,7 +81,7 @@ class _FormatePagesState extends State<FormatePages> {
                       ? Expanded(
                           child: GridView.builder(
                             itemCount: festivalController
-                                .diwaliModal.value.diwali?.length,
+                                .dhanteras.value.dhanTeras?.length,
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(
                                     crossAxisCount: 4,
@@ -92,12 +92,12 @@ class _FormatePagesState extends State<FormatePages> {
                               return InkWell(
                                 onTap: () {
                                   festivalController.imageChange.value =
-                                      festivalController.diwaliModal.value
-                                              .diwali?[index] ??
+                                      festivalController.dhanteras.value
+                                              .dhanTeras?[index] ??
                                           "";
                                 },
                                 child: Image.network(
-                                    "${festivalController.diwaliModal.value.diwali?[index]}"),
+                                    "${festivalController.dhanteras.value.dhanTeras?[index]}"),
                               );
                             },
                           ),
@@ -106,7 +106,7 @@ class _FormatePagesState extends State<FormatePages> {
                           ? Expanded(
                               child: GridView.builder(
                                 itemCount: festivalController
-                                    .uttrayanModal.value.uttrayan?.length,
+                                    .diwaliModal.value.diwali?.length,
                                 gridDelegate:
                                     const SliverGridDelegateWithFixedCrossAxisCount(
                                         crossAxisCount: 4,
@@ -117,12 +117,12 @@ class _FormatePagesState extends State<FormatePages> {
                                   return InkWell(
                                     onTap: () {
                                       festivalController.imageChange.value =
-                                          festivalController.uttrayanModal.value
-                                                  .uttrayan?[index] ??
+                                          festivalController.diwaliModal.value
+                                                  .diwali?[index] ??
                                               "";
                                     },
                                     child: Image.network(
-                                        "${festivalController.uttrayanModal.value.uttrayan?[index]}"),
+                                        "${festivalController.diwaliModal.value.diwali?[index]}"),
                                   );
                                 },
                               ),
@@ -182,7 +182,41 @@ class _FormatePagesState extends State<FormatePages> {
                                         },
                                       ),
                                     )
-                                  : SizedBox()),
+                                  : apiCheck["checkApi"] == 5
+                                      ? Expanded(
+                                          child: GridView.builder(
+                                            itemCount: festivalController
+                                                .dhanteras
+                                                .value
+                                                .dhanTeras
+                                                ?.length,
+                                            gridDelegate:
+                                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                                    crossAxisCount: 4,
+                                                    crossAxisSpacing: 12,
+                                                    mainAxisSpacing: 10,
+                                                    childAspectRatio:
+                                                        100 / 150),
+                                            itemBuilder:
+                                                (BuildContext ctx, index) {
+                                              return InkWell(
+                                                onTap: () {
+                                                  festivalController
+                                                          .imageChange.value =
+                                                      festivalController
+                                                                  .dhanteras
+                                                                  .value
+                                                                  .dhanTeras?[
+                                                              index] ??
+                                                          "";
+                                                },
+                                                child: Image.network(
+                                                    "${festivalController.dhanteras.value.dhanTeras?[index]}"),
+                                              );
+                                            },
+                                          ),
+                                        )
+                                      : SizedBox()),
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: SizeUtils.verticalBlockSize * 1,
