@@ -100,8 +100,8 @@ class _UserDetailState extends State<UserDetail> {
                                   width: 1.0,
                                   color: Colors.grey,
                                 ),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(5.0)),
+                                /* borderRadius: const BorderRadius.all(
+                                    Radius.circular(5.0)),*/
                               ),
                             ),
                           ),
