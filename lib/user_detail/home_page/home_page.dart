@@ -4,6 +4,7 @@ import 'package:festivalapp/helper/ad_manager/banner_ad.dart';
 import 'package:festivalapp/utils/navigation-utils/navigation.dart';
 import 'package:festivalapp/utils/navigation-utils/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 import '../../helper/ad_manager/ad_controller.dart';
@@ -48,9 +49,13 @@ class HomePage extends StatelessWidget {
                   () => festivalController.loding.value == true
                       ? Padding(
                           padding: EdgeInsets.only(
-                              top: SizeUtils.verticalBlockSize * 30,
-                              left: SizeUtils.horizontalBlockSize * 40),
-                          child: CircularProgressIndicator(),
+                            top: SizeUtils.verticalBlockSize *
+                                35, /*left: SizeUtils.horizontalBlockSize * 5*/
+                          ),
+                          child: SpinKitSpinningLines(
+                            color: Colors.black,
+                            size: SizeUtils.horizontalBlockSize * 15,
+                          ),
                         )
                       : Expanded(
                           child: ListView.separated(

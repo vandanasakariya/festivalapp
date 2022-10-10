@@ -4,6 +4,7 @@ import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_backgroun
 import 'package:festivalapp/utils/navigation-utils/navigation.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:get/get.dart';
 
 import '../../../theam/app_img.dart';
@@ -75,7 +76,10 @@ class _FormatePagesState extends State<FormatePages> {
               ),
               Obx(() => festivalController.loding.value == true
                   ? const Center(
-                      child: CircularProgressIndicator(),
+                      child: SpinKitSpinningLines(
+                        color: Colors.black,
+                        size: 30,
+                      ),
                     )
                   : apiCheck["checkApi"] == 1
                       ? Expanded(
