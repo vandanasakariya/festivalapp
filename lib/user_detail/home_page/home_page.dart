@@ -73,7 +73,7 @@ class HomePage extends StatelessWidget {
                                     BannerAds();
                                     if (festivalController.festivalModal.value
                                             .festival![index] ==
-                                        "Dhan_Teras") {
+                                        "Dhan Teras") {
                                       festivalController.getDhanTeras();
                                       festivalController.isCheckApi.value = 1;
                                     } else if (festivalController.festivalModal
@@ -83,7 +83,7 @@ class HomePage extends StatelessWidget {
                                       festivalController.isCheckApi.value = 2;
                                     } else if (festivalController.festivalModal
                                             .value.festival![index] ==
-                                        "happy_New_Year") {
+                                        "happy New Year") {
                                       festivalController.getHappyNewYearMeth();
                                       festivalController.isCheckApi.value = 3;
                                     } else if (festivalController.festivalModal
@@ -123,7 +123,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        bottomNavigationBar: Container(
+        bottomSheet: Container(
           child: BannerAds(),
         ),
       ),

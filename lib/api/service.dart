@@ -13,13 +13,13 @@ import 'modal.dart';
 
 class FestivalService {
   static Future<FestivalModal?> festivalServiceMethod() async {
-    const url = "https://myfestivalcard.glitch.me/api/festival/";
+    const url = "https://myfestivalcard.glitch.me/api/festival/list";
     final response = await http.get(Uri.parse(url));
     return FestivalModal.fromJson(json.decode(response.body));
   }
 
   static Future<DhanTerasModal> dhanTeras() async {
-    log(AppString.dhanTeras.replaceAll("_", " "));
+    log(AppString.dhanTeras);
     const url = AppString.baseUrl + AppString.dhanTeras;
     final response = await http.get(Uri.parse(url));
     return DhanTerasModal.fromJson(json.decode(response.body));
