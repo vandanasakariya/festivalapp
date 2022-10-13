@@ -16,10 +16,10 @@ class DhanTerasModal {
   List<String>? dhanTeras;
 
   factory DhanTerasModal.fromJson(Map<String, dynamic> json) => DhanTerasModal(
-    dhanTeras: List<String>.from(json["DhanTeras"].map((x) => x)),
-  );
+        dhanTeras: List<String>.from(json["Dhan_Teras"].map((x) => x)),
+      );
 
   Map<String, dynamic> toJson() => {
-    "DhanTeras": List<dynamic>.from(dhanTeras!.map((x) => x)),
-  };
+        "Dhan_Teras": List<dynamic>.from(dhanTeras!.map((x) => x)),
+      };
 }
