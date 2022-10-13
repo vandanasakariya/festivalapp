@@ -36,7 +36,6 @@ class _FormatePagesState extends State<FormatePages> {
       child: Scaffold(
         body: Padding(
           padding: EdgeInsets.symmetric(
-              vertical: SizeUtils.verticalBlockSize * 3,
               horizontal: SizeUtils.horizontalBlockSize * 5),
           child: Column(
             children: [
@@ -82,7 +81,8 @@ class _FormatePagesState extends State<FormatePages> {
                       ),
                     )
                   : apiCheck["checkApi"] == 1
-                      ? Expanded(
+                      ? Flexible(
+                          flex: 1,
                           child: GridView.builder(
                             itemCount: festivalController
                                 .dhanteras.value.dhanTeras?.length,
@@ -223,7 +223,7 @@ class _FormatePagesState extends State<FormatePages> {
                                       : SizedBox()),
               Padding(
                 padding: EdgeInsets.symmetric(
-                    vertical: SizeUtils.verticalBlockSize * 1,
+                    // vertical: SizeUtils.verticalBlockSize * 1,
                     horizontal: SizeUtils.horizontalBlockSize * 1),
                 child: InkWell(
                   onTap: () {
@@ -283,9 +283,9 @@ class _FormatePagesState extends State<FormatePages> {
             ],
           ),
         ),
-        bottomNavigationBar: Container(
-          child: BannerAds(),
-        ),
+        // bottomNavigationBar: Container(
+        //   child: BannerAds(),
+        // ),
       ),
     );
   }
