@@ -1,9 +1,7 @@
-import 'dart:convert';
 
 import 'package:festivalapp/user_detail/home_page/festival_controller.dart';
 import 'package:festivalapp/user_detail/home_page/home_page.dart';
 import 'package:festivalapp/user_detail/user_detail.dart';
-import 'package:festivalapp/utils/shardprafrance.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';

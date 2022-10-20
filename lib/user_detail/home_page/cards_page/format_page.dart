@@ -1,16 +1,7 @@
-import 'package:festivalapp/theam/app_img.dart';
-import 'package:festivalapp/user_detail/home_page/cards_page/colorfull_background.dart';
-import 'package:festivalapp/utils/navigation-utils/routes.dart';
-import 'package:festivalapp/widget/custom_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../../theam/app_string.dart';
-import '../../../utils/navigation-utils/navigation.dart';
-import '../../../utils/size_utils.dart';
 import '../../user_detail.dart';
-import '../home_page.dart';
 import 'format_pages.dart';
 
 class FormatPage extends StatefulWidget {

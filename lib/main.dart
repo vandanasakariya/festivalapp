@@ -1,7 +1,6 @@
 import 'package:festivalapp/helper/ad_manager/ad_controller.dart';
 import 'package:festivalapp/helper/ad_manager/app_lifecycle_reactor.dart';
 import 'package:festivalapp/helper/ad_manager/app_open_ad_manager.dart';
-import 'package:festivalapp/user_detail/home_page/festival_controller.dart';
 import 'package:festivalapp/utils/navigation-utils/routes.dart';
 import 'package:festivalapp/utils/shardprafrance.dart';
 import 'package:flutter/material.dart';
