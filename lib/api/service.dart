@@ -13,16 +13,16 @@ import 'modal.dart';
 
 class FestivalService {
   static Future<FestivalModal?> festivalServiceMethod() async {
-    const url = "https://myfestivalcard.glitch.me/api/festival/list";
+    const url = "https://myfestivalcard.glitch.me/api/festival/";
     final response = await http.get(Uri.parse(url));
     return FestivalModal.fromJson(json.decode(response.body));
   }
 
-  static Future<DhanTerasModal> dhanTeras() async {
+  static Future<DhanTerasModel> dhanTeras() async {
     log(AppString.dhanTeras);
     const url = AppString.baseUrl + AppString.dhanTeras;
     final response = await http.get(Uri.parse(url));
-    return DhanTerasModal.fromJson(json.decode(response.body));
+    return DhanTerasModel.fromJson(json.decode(response.body));
   }
 
   static Future<DiwaliModal> DiwaliMethod() async {

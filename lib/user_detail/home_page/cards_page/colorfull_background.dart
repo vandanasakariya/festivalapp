@@ -36,6 +36,7 @@ class _ColorFullBackgroundState extends State<ColorFullBackground> {
 
   @override
   Widget build(BuildContext context) {
+    print("Sgg");
     return SafeArea(
       child: Scaffold(
         body: Obx(

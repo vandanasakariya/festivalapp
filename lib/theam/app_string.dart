@@ -1,5 +1,5 @@
 class AppString {
-  static const baseUrl = "https://myfestivalcard.glitch.me/api/festival/list";
+  static const baseUrl = "https://myfestivalcard.glitch.me/api/festival/";
 
   static const dhanTeras = "Dhan-Teras";
 

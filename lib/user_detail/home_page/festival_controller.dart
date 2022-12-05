@@ -63,7 +63,7 @@ class FestivalController extends GetxController {
     loding.value = false;
   }
 
-  Rx<DhanTerasModal> dhanteras = DhanTerasModal().obs;
+  Rx<DhanTerasModel> dhanteras = DhanTerasModel().obs;
   Future<void> getDhanTeras() async {
     loding.value = true;
     final result = await FestivalService.dhanTeras();
