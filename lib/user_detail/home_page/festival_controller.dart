@@ -18,7 +18,6 @@ import '../../utils/shardprafrance.dart';
 class FestivalController extends GetxController {
   RxString imageChange = "".obs;
   RxInt i = 0.obs;
-
   RxInt isCheckApi = 0.obs;
   RxString city = "".obs;
   RxString insta = "".obs;
@@ -63,7 +62,7 @@ class FestivalController extends GetxController {
     loding.value = false;
   }
 
-  Rx<DhanTerasModel> dhanteras = DhanTerasModel().obs;
+    Rx<DhanTerasModel> dhanteras = DhanTerasModel().obs;
   Future<void> getDhanTeras() async {
     loding.value = true;
     final result = await FestivalService.dhanTeras();

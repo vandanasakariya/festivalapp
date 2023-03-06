@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
                             itemCount: festivalController
                                     .festivalModal.value.festival?.length ??
                                 0,
-                            itemBuilder: (BuildContext context, int index) {
+                              itemBuilder: (BuildContext context, int index) {
                               return Padding(
                                 padding: EdgeInsets.symmetric(
                                     /*vertical: SizeUtils.verticalBlockSize * 1*/

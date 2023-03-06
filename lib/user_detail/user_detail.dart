@@ -256,45 +256,45 @@ class _UserDetailState extends State<UserDetail> {
 
   /*late Future<int> storagePermissionChecker;
   Future<int> checkStoragePermission() async {final result=await PermissionHandler().checkPermissionStatus()}*/
-  _commonTextField({
-    final String? hintText,
-    final FormFieldValidator<String>? validator,
-    final TextEditingController? controller,
-    final List<TextInputFormatter>? inputFormatters,
-    final GestureTapCallback? onTap,
-    final TextInputType? keyboardType,
-    final String? labelText,
-  }) {
-    return Padding(
-      padding: EdgeInsets.symmetric(vertical: SizeUtils.verticalBlockSize * 2),
-      child: TextFormField(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        keyboardType: keyboardType,
-        style: TextStyle(
-          fontWeight: FontWeight.w400,
-          color: Colors.black87,
+    _commonTextField({
+      final String? hintText,
+      final FormFieldValidator<String>? validator,
+      final TextEditingController? controller,
+      final List<TextInputFormatter>? inputFormatters,
+      final GestureTapCallback? onTap,
+      final TextInputType? keyboardType,
+      final String? labelText,
+    }) {
+      return Padding(
+        padding: EdgeInsets.symmetric(vertical: SizeUtils.verticalBlockSize * 2),
+        child: TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          keyboardType: keyboardType,
+          style: TextStyle(
+            fontWeight: FontWeight.w400,
+            color: Colors.black87,
+          ),
+          validator: validator,
+          controller: controller,
+          inputFormatters: inputFormatters,
+          onTap: onTap,
+          decoration: InputDecoration(
+            labelText: labelText,
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            focusedErrorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+            hintText: hintText,
+          ),
         ),
-        validator: validator,
-        controller: controller,
-        inputFormatters: inputFormatters,
-        onTap: onTap,
-        decoration: InputDecoration(
-          labelText: labelText,
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          focusedErrorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          errorBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-          ),
-          hintText: hintText,
-        ),
-      ),
-    );
-  }
+      );
+    }
 }
